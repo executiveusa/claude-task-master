@@ -3,6 +3,7 @@
 import TaskMasterMCPServer from './src/index.js';
 import dotenv from 'dotenv';
 import logger from './src/logger.js';
+import googleDriveRoutes from './routes/googleDriveRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -34,3 +35,5 @@ async function startServer() {
 
 // Start the server
 startServer();
+
+app.use('/api', googleDriveRoutes);
